@@ -12,12 +12,16 @@
 
 ## 스터디 진행 관련 폴더
  nodejs - 웹서버  
+ 
  mariaDB - 데이터베이스 
+ 
  gulp - 자동화 개발 툴
+ 
  angularjs  - front-end 로 배울 첫번째 언어
  
 ## step 1. nodejs를 이용한 웹서버 구축
  1. nodejs 설치
  2. broswer에 index.html 추가
+ 
  기간 : 3/26일 까지
  
