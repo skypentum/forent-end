@@ -1,44 +1,44 @@
 #mariaDB 
 
-ÀÌ °÷Àº mariaDB¸¦ À§ÇÑ °ø°£ÀÔ´Ï´Ù.
+ì´ ê³³ì€ mariaDBë¥¼ ìœ„í•œ ê³µê°„ì…ë‹ˆë‹¤.
 
-## ½ºÅÍµğ Âü°í url 
+## ìŠ¤í„°ë”” ì°¸ê³  url 
 
 ```
-mariaDB °ø½Ä »çÀÌÆ® : https://mariadb.org/learn/
+mariaDB ê³µì‹ ì‚¬ì´íŠ¸ : https://mariadb.org/learn/
 
 Node.js, MariaDB and GIS : https://mariadb.org/node-js-mariadb-and-gis/
 
-APM ¼³Ä¡ : http://wingsnote.com/19 (ÇâÈÄ ¹é¿£µå language »ç¿ë ¿©ºÎµµ ³íÀÇÇØ¾ß ÇÒ µí...)
+APM ì„¤ì¹˜ : http://wingsnote.com/19 (í–¥í›„ ë°±ì—”ë“œ language ì‚¬ìš© ì—¬ë¶€ë„ ë…¼ì˜í•´ì•¼ í•  ë“¯...)
 ```
 
-### CentOS 7¿¡ MariaDB ¼³Ä¡ (yumÀ» ÀÌ¿ëÇÑ °£Æí ¼³Ä¡)
+### CentOS 7ì— MariaDB ì„¤ì¹˜ (yumì„ ì´ìš©í•œ ê°„í¸ ì„¤ì¹˜)
 
-¼³Ä¡ ¸í·É
+ì„¤ì¹˜ ëª…ë ¹
 ```
 yum install mariadb-server mariadb
 ```
 
-½ÃÀÛ ÇÁ·Î±×·¥¿¡ µî·Ï
+ì‹œì‘ í”„ë¡œê·¸ë¨ì— ë“±ë¡
 ```
 systemctl enable mariadb.service
 ```
 
-¼­ºñ½º ½ÃÀÛ
+ì„œë¹„ìŠ¤ ì‹œì‘
 ```
 systemctl start mariadb.service
 ```
 
-root acount ¼¼ÆÃ(cnfÆÄÀÏÇÏ´Â °Íº¸´Ù °£ÆíÇÏ°í ½¬¿ò)
+root acount ì„¸íŒ…(cnfíŒŒì¼í•˜ëŠ” ê²ƒë³´ë‹¤ ê°„í¸í•˜ê³  ì‰¬ì›€)
 ```
 mysql_secure_installation
 enter
 Y
-ºñ¹ø
-ºñ¹ø
+ë¹„ë²ˆ
+ë¹„ë²ˆ
 Y
 Y
 Y
 Y
-(ÁÖÀÇ: ¹öÆ° ´©¸£´Â ¼ø¼­³ª ³»¿ëÀÌ ¹öÀü¿¡ µû¶ó ¹Ù²ğ ¼ö ÀÖÀ¸´Ï Àß ÀĞ¾îº¸°í Ã³¸®)
+(ì£¼ì˜: ë²„íŠ¼ ëˆ„ë¥´ëŠ” ìˆœì„œë‚˜ ë‚´ìš©ì´ ë²„ì „ì— ë”°ë¼ ë°”ë€” ìˆ˜ ìˆìœ¼ë‹ˆ ì˜ ì½ì–´ë³´ê³  ì²˜ë¦¬)
 ```

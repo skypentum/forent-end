@@ -25,9 +25,10 @@
  
  기간 : 3/26일 까지
 
-## step 2. mariaDB + node.js(또는 express 등)을 통해 데이터 바인딩 하기
+## step 2. mariaDB + node.js(또는 express 등)을 통해 데이터 바인딩
  1. mariaDB 설치 및 데이터 insert 
  2. node.js 통해 mariaDB 연동 및 데이터 바인딩(web 상에서 보여주면 좋을 듯)
+ 
  opt) node.js 관련 WAS 설치(express)
  
  기간 : 4/11일 까지
