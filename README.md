@@ -20,18 +20,22 @@
  ~~angularjs  - front-end 로 배울 첫번째 언어~~
 
  - 매 스터디 모임 때 진행되는 Task 단위별로 폴더를 생성함
+ 
  ex) Task1-nodejs
-     Task2-mariadb
+
+    Task2-mariadb
+
  - 스터디 내용은 각 Task별로 각각 폴더를 생성하여 작성한 study code를 github에 업로드함
+ 
  ex) Task1 -> kdi -> code level의 스터디 내용 업로드
  
-## step 1. nodejs를 이용한 웹서버 구축
+## Task 1. nodejs를 이용한 웹서버 구축
  1. nodejs 설치
  2. broswer에 index.html 추가
  
  기간 : 3/26일 까지
 
-## step 2. mariaDB + node.js(또는 express 등)을 통해 데이터 바인딩
+## Task 2. mariaDB + node.js(또는 express 등)을 통해 데이터 바인딩
  1. mariaDB 설치 및 데이터 insert 
  2. node.js 통해 mariaDB 연동 및 데이터 바인딩(web 상에서 보여주면 좋을 듯)
  

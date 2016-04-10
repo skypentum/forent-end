@@ -1,11 +1,9 @@
 #Express + mariaDB 연동
 
 ##express 설치 
-***
  - express 설치와 관련해서는 [이곳](http://expressjs.com/ko/starter/installing.html)을 참조함
 
 ## mariaDB 설치
-***
  - 다운로드 : [https://downloads.mariadb.org](https://downloads.mariadb.org)
 
  - window 에 경우 두가지 방법이 있음.
@@ -14,7 +12,6 @@
     2. 설치버전.zip 확장명으로 되어 있는 압축파일을 다운로드 받은 후 원하는 경로에 압축을 풀음
 
 ## express + mariaDB
-***
   - mariaDB의 경우 mysql와 동일한 DBMS을 제공하므로 'mysql' module를 사용하여 연동함
 
 ### package.json
