@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <title>Express HTML</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.3/angular.js"></script>
+    <script>
+        var app = angular.module('exampleApp', []);
+
+        app.controller('ctrl1', function ($scope, $http) {
+            $scope.reqData = [];
+
+            $scope.onClick = function () {
+                $http({
+                        method: 'GET',
+                        url: 'http://localhost:8888/api/getList'
+                    })
+                    .success(function (data, status, headers, config) {
+                        if (data) {
+                            console.log(data);
+                            $scope.reqData = data;
+                        } else {
+                        }
+                    })
+                    .error(function (data, status, headers, config) {
+                        console.log(status);
+                    });
+            }
+        });
+    </script>
+</head>
+
+<body ng-app="exampleApp">
+    <div ng-controller="ctrl1">
+        <button type="button" class="btn btn-default" ng-click="onClick();">Call</button>
+
+        <ul>
+            <li ng-repeat="row in reqData">{{row.name}}</li>
+        </ul>
+    </div>
+</body>
+
+</html>
