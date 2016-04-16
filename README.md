@@ -46,6 +46,7 @@
 ## Task 3. ECMA 5 vs ECMA 6 compare 조사
  1. ECMA 5와 비교하여 EAMA 6에 추가된 library 조사
  2. ECMA 6특징 및 추가된 내용 조사
+ 
  기간 : 4/30일 까지
 
 ## 스터티 모임 history
