@@ -1,4 +1,12 @@
 #ECMA6
 
-ÀÌ °÷Àº ECMA6À» À§ÇÑ °ø°£ÀÔ´Ï´Ù.
+ì´ ê³³ì€ ECMA6ì„ ìœ„í•œ ê³µê°„ì…ë‹ˆë‹¤.
 
+##ì°¸ê³  URL
+```
+ECMA6 Feature : http://es6-features.org/#Constants
+ECMA6 Feature :https://github.com/lukehoban/es6features/blob/master/README.md
+ECMA6 Feature (í•œê¸€ ë²ˆì—­) : http://seokjun.kr/ecmascript-6-features/
+ECMA6 ë§›ë³´ê¸° : http://vnthf.logdown.com/tags/ecma6
+
+```
