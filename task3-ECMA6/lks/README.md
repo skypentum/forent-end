@@ -2,7 +2,7 @@
 
 ## ES6의 문법을 정리하고 ES5와 비교할 수 있는 경우 추가 작성 함
 
-### 1 let의 탄생
+### let의 탄생
 타 언어 개발자들이 javascript를 설계 할 때 변수는 모두 블록 스코프임을 모르고 설계할 때가 있다.  
 그리고 javascript 설계시 var을 사용하는 방식의 경우 블록이 아닌 관계로 메모리 누수가 생길 가능성이 높다.  
 따라서 es6에서는 블록 내에서만 사용 가능한 키워드가 생긴 것이다.
@@ -146,6 +146,82 @@ myFunction(6, 7);
 ```
 6 7 3
 ```
+
+### 펼침 연산자
+
+이터러블 객체를 개별 값으로 나누는 펼침 연산자는 "..."으로 표기한다.
+```
+이터러블(iterable)은 ES6 이터러블 규약(iterable protocol)에 따라 여러 값을 가지고,
+개별 값을 순회 가능한 객체를 말한다.
+대표적인 이터러블 객체로는 배열이 있다.
+```
+펼침 연산자를 사용하는 방법 중 하나는 기존 ES6의 경우 배열 값을 함수 인자로 넘겨주려고 할 때  
+apply()내장 메소드를 이용할 수 밖에 없었다.  
+아래는 apply를 이용하여 구현한 코드이다.
+```
+function myFunction(a, b)
+{
+ retuen a + b;
+}
+var data = [1, 2];
+var result = myFunction.apply(null, data);
+console.log(result);
+```
+위 코드를 ES6의 경우 펼침 연산자를 통해 좀 더 쉽게 구현할 수 있게 되었다.
+```
+function myFunction(a, b)
+{
+ retuen a + b;
+}
+var data = [1, 2];
+var result = myFunction.(...data);
+console.log(result);
+```
+자바스크립트 해석기는 ...data를 먼저 1, 2로 치환한 다음 myFunction 함수를 호출하게 된다.
+
+#### 펼침 연산자의 다른 사용 예
+
+##### 배열 값을 다른 배열의 일부로 만들 때
+```
+let array1 = [3, 4, 5];
+let array2 = [1, 2, ...array1, 6, 7];
+```
+
+##### 배열 값을 다른 배열에 밀어 넣을 때(push)
+이 경우 ES6 때는 아래와 같이 코딩 하였다.
+```
+var array1 = [1, 2, 3, 4];
+var array2 = [3, 4, 5];
+
+Array.prototype.push.apply(array1, array2);
+```
+하지만 펼침 연산자로 좀 더 편하게 가능해 졌다.
+```
+var array1 = [1, 2, 3, 4];
+var array2 = [3, 4, 5];
+
+array1.push(...array2);
+```
+
+##### 나머지 파라미
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
