@@ -161,7 +161,7 @@ apply()내장 메소드를 이용할 수 밖에 없었다.
 ```javascript
 function myFunction(a, b)
 {
-	retuen a + b;
+    return a + b;
 }
 var data = [1, 2];
 var result = myFunction.apply(null, data);
@@ -171,10 +171,10 @@ console.log(result);
 ```javascript
 function myFunction(a, b)
 {
-	retuen a + b;
+    return a + b;
 }
 var data = [1, 2];
-var result = myFunction.(...data);
+var result = myFunction(...data);
 console.log(result);
 ```
 자바스크립트 해석기는 ...data를 먼저 1, 2로 치환한 다음 myFunction 함수를 호출하게 된다.
@@ -368,9 +368,9 @@ console.log(name, age); // 결과는 Tom 20
 ```javascript
 function myFunction({name = "Tom", age = 20, profession = "math"} = {})
 {
-	console.log(name, age, profession); // 실행결과는 "Min 25 math"
+    console.log(name, age, profession); // 실행결과는 "Min 25 math"
 }
-myFunction ({name = "Min", age: 25});
+myFunction ({name : "Min", age: 25});
 ```
 
 ### 화살표 함수
@@ -380,30 +380,30 @@ ES6부터 => 연산자로 함수를 생성하는 화살표 함수가 생겼다.
 우선 아래의 예제로 어떻게 사용하는지 확인해 본다.
 ```javascript
 let circleArea = (pi, r) => {
-	let area = pi * r * r;
-	return area;
+    let area = pi * r * r;
+    return area;
 }
-let result = circleArea = (3.14, 3);
+let result = circleArea(3.14, 3);
 
 console.log(result); // 실행 결과는 "28.26"
 ```
 
 ES5의 경우는 아래와 같은 방법을 사용하였다.
 ```javascript
-var circle Area = function(pi, r){
+var circleArea = function(pi, r){
 	var area = pi * r * r;
-	retune area;
+	return area;
 }
 
-var result = circleArea = (3.14, 3);
+var result = circleArea(3.14, 3);
 
 console.log(result); // 실행 결과는 "28.26"
 ```
 
 그리고 문장이 하나의 경우는 { } 기호를 생략할 수 있다.
 ```javascript
-let circle Area = (pi, r) => pi * r * r;
-let result = circleArea = (3.14, 3);
+let circleArea = (pi, r) => pi * r * r;
+let result = circleArea(3.14, 3);
 
 console.log(result); // 실행 결과는 "28.26"
 ```
@@ -433,7 +433,7 @@ Window
 아래는 화살표 함수에서의 this 이다.
 ```javascript
 var object = {
-	f1 () => {
+  f1 : () => {
 		console.log(this);
 		var f2 = () => {console.log(this);}
 		f2();
@@ -503,7 +503,7 @@ console.log(object["first" + "Name"]);
 하지만 ES6 부터는 객체 생성에서 부터 프로퍼티 추가가 가능하게 되었다.
 ```javascript
 let object = {
-	["first" + "Name"] = "Tom",
+  ["first" + "Name"] : "Tom",
 };
 console.log(object["first" + "Name"]);
 ```
