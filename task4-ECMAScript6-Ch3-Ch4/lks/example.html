@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>TEST</title>
+</head>
+<body>
+<script type="text/javascript">
+
+// -----------------------------------------------
+// Symbol은 어떤 값과도 같지 않다.
+document.write("---심볼 비교---");
+document.write("<br>");
+(function(){
+	let s1 = window.Symbol("내 심볼");
+	let s2 = window.Symbol("내 심볼");
+
+	document.write(s1 === s2);
+	document.write("<br>");
+	s1 = s2;
+	document.write(s1 === s2);
+})();
+document.write("<br>");
+document.write("<br>");
+
+// -----------------------------------------------
+// typeof 연산자
+document.write("---typeof 연산자---");
+document.write("<br>");
+(function(){
+	var s = Symbol();
+	document.write(typeof s);
+})();
+document.write("<br>");
+document.write("<br>");
+
+// -----------------------------------------------
+// new 연산자
+document.write("---new 연산자---");
+document.write("<br>");
+(function(){
+	try{
+		let s = new Symbol();
+	}
+	catch(e){
+		document.write(e.message);
+	}
+})();
+document.write("<br>");
+document.write("<br>");
+
+// -----------------------------------------------
+// 심볼을 프로퍼티 키로 사용
+document.write("---심볼을 프로퍼티 키로 사용---");
+document.write("<br>");
+(function(){
+	let s2 = Symbol();
+	s1 = s2;
+	obj = {[s2]: "내 심볼"}
+	document.write(obj[s2] + "<br>");
+	document.write(obj[s2] === obj[s1]);
+	document.write("<br>");
+})();
+document.write(obj[s1]);
+document.write("<br>");
+document.write("<br>");
+
+// -----------------------------------------------
+// Object.getOwnPropertySymbols()
+document.write("---Object.getOwnPropertySymbols()---");
+document.write("<br>");
+(function(){
+	let obj = {a: 12};
+	let s1 = Symbol("내 심볼");
+	let s2 = Symbol("내 심볼");
+
+	Object.defineProperty(obj, s1, {
+		enumerable: false
+	});
+	obj[s2] = "";
+	document.write(Object.getOwnPropertySymbols(obj));
+})();
+document.write("<br>");
+document.write("<br>");
+
+</script>
+</body>
+</html>
