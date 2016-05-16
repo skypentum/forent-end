@@ -78,7 +78,8 @@ document.write("<br>");
 		enumerable: false
 	});
 	obj[s2] = "";
-	document.write(Object.getOwnPropertySymbols(obj));
+	// document.write(Object.getOwnPropertySymbols(obj));
+	document.write(Object.getOwnPropertySymbols(obj).toLocaleString());
 })();
 document.write("<br>");
 document.write("<br>");
