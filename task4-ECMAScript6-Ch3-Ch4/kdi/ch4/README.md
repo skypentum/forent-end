@@ -6,7 +6,7 @@
    * return, throw를 통해 함수를 순차적으로 처리하기 위함
    * 코드 가독성이 좋아짐
 
-```
+```javascript
 console.log("1");
 $('.button').click(function(){ 
   console.log("2"); 
@@ -49,7 +49,7 @@ promiseWithStudent.then(function(data) {
  resolve() | 주어진 값이 정상인 경우 객체를 반환하는 매소드
  reject() | 주어진 값이 정상이 아닌 경우 객체를 반환하는 매소드
  all() | 주어진 순환형 deferred가 모두 처리되었을 때 반환하는 매소드
-```
+```javascript
 var promiseWithStudent = new Promise(function(resolve, reject){
   let result = a();
   if(result > 50) {
@@ -86,7 +86,7 @@ Promise.all(arr).then(function() {
  * promise 객체 : promise 실행을 처리 
  then() | deferred 객체의 결과가 성공/실패에 관계 없이 무조건 수행
  catch() | deferred 객체의 결과가 실패인 경우 수행
-```
+```javascript
 promiseWithStudent.then(function(data) {
   if (data === 100) { 
     return 'excellent';

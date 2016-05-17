@@ -4,7 +4,7 @@
  - 유일한 소유권을 가짐
  - 이유 : 객체 프로퍼티 키로 사용 시 다른 프로퍼티 키와 충돌하는 일을 방지한다.
  - new 연산자를 쓰지 못함(사용 시 예외 처리) : es6 부터 규정상 원시타입 생성자를 임의로 호출 불가
-```
+```javascript
 (function() {
 
     var key1 = "description";
@@ -79,7 +79,7 @@ console.log(obj[Symbol.for("age")]);
    Symbol.iterator 심볼을 프로퍼티 키로 반드시 가져야 함 | 요소를 반환하는 함수를 구현(기본 : next())
    심볼만 호출하냐 | 매번 함수를 호출하냐(사용 메모리의 차이?)
    
-```
+```javascript
 let obj1 = {
   array: [1, 2, 3, 4, 5],
   nextIndex: 0,
@@ -130,7 +130,7 @@ console.log(obj.next().done);
  - 생성기 함수(function*)로 표기함
  - yield : 해당 속성을 만나면 중지되고 해당 값을 반환함
 
-```
+```javascript
 //codepen에서만 동작
 //iterator
 function* generator_function()
@@ -186,7 +186,7 @@ console.log(generator.next().done);
  - iterable 객체 값을 순회하는 구문
  - next()보다 간편함
 
-```
+```javascript
 function* generator_function()
 {
   yield 1;
