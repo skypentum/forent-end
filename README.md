@@ -53,7 +53,9 @@
  1. ch03 : 이터레이터
  2. ch04 : 비동기 프로그래밍
  
- 기간 : 5/12일 까지
+## Task 5. ECMA 6 길들이기 ch05 ~ ch06 study & Promise study
+ 
+ 기간 : 6/14일 까지
 
 ## 스터티 모임 history
 
