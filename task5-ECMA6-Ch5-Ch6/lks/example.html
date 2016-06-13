@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>TEST</title>
+</head>
+<body>
+<script type="text/javascript">
+
+// -----------------------------------------------
+document.write("---Reflect.apply---");
+document.write("<br>");
+(function(){
+	function function_name(a, b, c)
+	{
+		return this.value + a + b + c;
+	}
+	var returned_value = Reflect.apply(function_name, {value:100}, [10, 20, 30]);
+
+	document.write(returned_value);
+})();
+document.write("<br>");
+document.write("<br>");
+
+// -----------------------------------------------
+document.write("---Reflect.construct---");
+document.write("<br>");
+(function(){
+	function constructor1(a, b)
+	{
+		this.a = a;
+		this.b = b;
+
+		this.f = function(){
+			return this.a + this.b + this.c;
+		}
+	}
+	function constructor2(){};
+	constructor2.prototype.c = 100;
+
+	var myObject = Reflect.construct(constructor1, [1, 2], constructor2);
+
+	document.write(myObject.f());
+})();
+document.write("<br>");
+document.write("<br>");
+
+// -----------------------------------------------
+document.write("---Reflect.defineProperty---");
+document.write("<br>");
+(function(){
+	let obj = {};
+
+	Reflect.defineProperty(obj, "name", {
+		value: "수지",
+		writable: true,
+		configurable: true,
+		enumerable: true
+	});
+	document.write(obj.name);
+})();
+document.write("<br>");
+document.write("<br>");
+
+// -----------------------------------------------
+document.write("---Reflect.defineProperty---");
+document.write("<br>");
+(function(){
+	let obj = {
+		__name__: "수지"
+	};
+
+	Reflect.defineProperty(obj, "name", {
+		get: function(){
+			return this.__name__;
+		},
+		set: function(newName){
+			this.__name__ = newName;
+		},
+		configurable: true,
+		enumerable: true
+	});
+	obj.name = "민호";
+	document.write(obj.name);
+})();
+document.write("<br>");
+document.write("<br>");
+
+// -----------------------------------------------
+document.write("---Reflect.deleteProperty---");
+document.write("<br>");
+(function(){
+	let obj = {
+		name: "수지"
+	};
+
+	document.write(obj.name);
+	Reflect.deleteProperty(obj, "name");
+	document.write(obj.name);
+})();
+document.write("<br>");
+document.write("<br>");
+
+// -----------------------------------------------
+// document.write("---Reflect.enumerate---");
+// document.write("<br>");
+// (function(){
+// 	let obj = {
+// 		a: 1,
+// 		b: 2,
+// 		c: 3
+// 	};
+
+// 	var iterator = Reflect.enumerate(obj);
+
+// 	document.write(iterator.next().value);document.write("<br>");
+// 	document.write(iterator.next().value);document.write("<br>");
+// 	document.write(iterator.next().value);document.write("<br>");
+// 	document.write(iterator.next().done);document.write("<br>");
+// })();
+// document.write("<br>");
+// document.write("<br>");
+
+// -----------------------------------------------
+document.write("---Reflect.get---");
+document.write("<br>");
+(function(){
+	let obj = {
+		__name__: "수지"
+	};
+
+	Reflect.defineProperty(obj, "name", {
+		get: function(){
+			return this.__name__;
+		}
+	});
+	document.write(obj.name);
+	var name = Reflect.get(obj, "name", {__name__: "민호"});
+	document.write(name);
+	var name = Reflect.get(obj, "name");
+	document.write(name);
+})();
+document.write("<br>");
+document.write("<br>");
+
+// -----------------------------------------------
+document.write("---Reflect.set---");
+document.write("<br>");
+(function(){
+	let obj1 = {
+		__name__: "수지"
+	};
+
+	Reflect.defineProperty(obj1, "name", {
+		set: function(newName){
+			this.__name__ = newName;
+		},
+
+		get: function(){
+			return this.__name__;
+		}
+	});
+	var obj2 = {
+		__name__: "민호"
+	};
+	Reflect.set(obj1, "name", "수지", obj2);
+	// 마지막 obj2의 경우는 get 함수 내부에서 참조할 this 값을 obj2가 될 수 있도록 변경함으로
+	// 실제 바뀐 값은 obj2의 __name__이 될 수 있도록 하였다.
+	document.write(obj1.name);document.write("<br>")
+	document.write(obj2.__name__);
+})();
+document.write("<br>");
+document.write("<br>");
+
+// -----------------------------------------------
+document.write("---Reflect.getOwnPropertyDescriptor---");
+document.write("<br>");
+(function(){
+	let obj = {
+		name: "수지"
+	};
+
+	var descriptor = Reflect.getOwnPropertyDescriptor(obj, "name");
+	document.write(descriptor.value);document.write("<br>")
+	document.write(descriptor.writable);document.write("<br>")
+	document.write(descriptor.enumerable);document.write("<br>")
+	document.write(descriptor.configurable);
+})();
+document.write("<br>");
+document.write("<br>");
+
+// -----------------------------------------------
+document.write("---Reflect.getPrototypeOf---");
+document.write("<br>");
+(function(){
+	let obj1 = {
+		__proto__: {
+			name: "수지"
+		}
+	};
+
+	var obj2 = Reflect.getPrototypeOf(obj1);
+	document.write(obj2.name);
+})();
+document.write("<br>");
+document.write("<br>");
+
+// -----------------------------------------------
+document.write("---Reflect.setPrototypeOf---");
+document.write("<br>");
+(function(){
+	let obj = {};
+	Reflect.setPrototypeOf(obj, {
+		name: "수지"
+	});
+
+	document.write(obj.name);
+})();
+document.write("<br>");
+document.write("<br>");
+
+// -----------------------------------------------
+document.write("---Reflect.has---");
+document.write("<br>");
+(function(){
+	let obj = {
+		__proto__: {
+			name: "수지"
+		},
+		age: 12
+	};
+
+	document.write(Reflect.has(obj, "name"));document.write("<br>");
+	document.write(Reflect.has(obj, "age"));
+})();
+document.write("<br>");
+document.write("<br>");
+
+// -----------------------------------------------
+document.write("---Reflect.isExtensible---");
+document.write("<br>");
+(function(){
+	let obj = {
+		name: "수지"
+	};
+
+	document.write(Reflect.isExtensible(obj));document.write("<br>");
+	Object.preventExtensions(obj);
+	document.write(Reflect.isExtensible(obj));
+})();
+document.write("<br>");
+document.write("<br>");
+
+// -----------------------------------------------
+document.write("---Reflect.preventExtensions---");
+document.write("<br>");
+(function(){
+	let obj = {
+		name: "수지"
+	};
+
+	document.write(Reflect.isExtensible(obj));document.write("<br>");
+	document.write(Reflect.preventExtensions(obj));document.write("<br>");
+	document.write(Reflect.isExtensible(obj));
+})();
+document.write("<br>");
+document.write("<br>");
+
+// -----------------------------------------------
+document.write("---Reflect.ownKeys---");
+document.write("<br>");
+(function(){
+	let obj = {
+		a: 1,
+		b: 2,
+		__proto__: {
+			c: 3
+		}
+	};
+
+	let keys = Reflect.ownKeys(obj);
+
+	document.write(keys.length);document.write("<br>");
+	document.write(keys[0]);document.write("<br>");
+	document.write(keys[1]);document.write("<br>");
+	document.write(keys[2]);
+})();
+document.write("<br>");
+document.write("<br>");
+
+</script>
+</body>
+</html>
