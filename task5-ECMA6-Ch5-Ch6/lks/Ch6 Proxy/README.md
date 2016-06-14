@@ -5,6 +5,13 @@ Proxy가 소개된 사이트들을 아래 적는다.
 `http://hacks.mozilla.or.kr/2016/03/es6-in-depth-proxies-and-reflect/`  
 `http://stroot.tistory.com/70`
 
+책의 내용은 무언가 설명을 위해 억지로 예제를 만든 느낌이 강하여  
+차라리 래퍼런스를 보는 것이 더 나을지도 모르겠다.(definedProperty까지 작성 후 든 생각)  
+`https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy`  
+
+마지막으로 아래의 블로그가 우리가 사용하는 책을 옮긴 것으로 보인다.  
+`https://medium.com/@sungsichyun/es6-proxy-api-891b24b1c887#.jicb5ordg`  
+
 ## 프록시란
 
 프록시는 프로퍼티 탐색 및 할당, 생성자 호출, 열거 등 객체의 기본 동작에 사용자 임의의 로직을 넣기 위해 사용한다.  
