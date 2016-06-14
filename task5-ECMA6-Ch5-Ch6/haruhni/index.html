@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <title>ES6</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    <script>
+        function getDeferred() {
+            var d = $.Deferred();
+            
+            $.getJSON( 'test.json' ).done(function(json) {
+                d.resolve(json);
+            })
+            .fail(function(error) {
+                d.reject(error);
+            });
+
+            return d.promise();
+        }
+
+        getDeferred().then(function (success) {
+            console.log(success);
+        }, function (err) {
+            console.log(err);
+        })
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
