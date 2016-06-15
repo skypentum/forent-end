@@ -56,6 +56,12 @@
 ## Task 5. ECMA 6 길들이기 ch05 ~ ch06 study & Promise study
  
  기간 : 6/14일 까지
+ 
+## Task 6. ECMA 6 길들이기
+ 1. ECMA 6 길들이기 ch07 ~ ch08 study 
+ 2. Promise queue
+ 
+ 기간 : 6/28일 까지 
 
 ## 스터티 모임 history
 
