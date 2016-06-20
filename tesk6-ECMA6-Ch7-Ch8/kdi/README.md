@@ -1,5 +1,5 @@
 url
 ```
-object prototype ÀÌÇØÇÏ±â - http://insanehong.kr/post/javascript-prototype/
+object prototype ì´í•´í•˜ê¸° - http://insanehong.kr/post/javascript-prototype/
 class spec - https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Classes
 ```
