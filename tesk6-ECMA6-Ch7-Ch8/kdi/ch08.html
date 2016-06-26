@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+    <head>
+    	<title>Learning ECMAScript 6</title>    	
+    </head>
+    <body>
+    	<!-- ecma5 export -->
+    	<script src="lib/math.js"></script>
+        <script>
+            (function(window){
+            	var sum = function(x, y) {
+            		return x + y;
+            	};
+            	
+            	var sub = function(x, y) {
+            		return x - y;
+            	};
+            	
+            	var math = {
+            		findSum: function(a, b) {
+            			return sum(a, b);
+            		},
+            		findSub: function(a, b) {
+            			return sub (a, b);
+            		}
+            	};
+            	
+            	window.math = math;
+            })(window);
+            
+            console.log(math.findSum(1, 2));
+            console.log(math.findSub(1, 2));
+            
+            //ecma5 import
+            var math1 = LibMath;
+			console.log(math1.findSum(2, 2));
+            console.log(math1.findSub(2, 2));
+        </script>
+        <script type="module">
+            import math1 from "math.js";
+
+            console.log(math1.findSum(2, 2));
+            console.log(math1.findSub(2, 2));
+        </script>
+    </body>
+</html>
