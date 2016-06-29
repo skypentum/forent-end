@@ -62,6 +62,13 @@
  2. Promise queue
  
  기간 : 6/28일 까지 
+ 
+## Task 7. react js 환경 설정
+ 1. react js 기반의 froentend 환경 설정(공통)
+ 2. JQuery vs react js 차이점 분석 및 느낀점 (기섭)
+ 3. Angular js vs react js 차이점 분석 및 느낀점 (동일)
+ 
+ 기간 : 7/12일 까지  
 
 ## 스터티 모임 history
 
@@ -80,3 +87,11 @@
 ### 4/30
  - 스터디 일정 변경(주말 -> 주중)
  - 다음 일정 : 5/12(목) 19:00 ~ 22:00
+ 
+### 6/28
+ - react js 책 선정 후 pdf 제본 진행
+   
+   (금주 중으로 책 선정해서 품의서 올릴 것)
+ - 제본 비용은 1/n으로 나누어서 진행
+ - pdf 작업 사이트 : 토리스켄(http://www.toriscan.com/3sub_04.htm)
+   
