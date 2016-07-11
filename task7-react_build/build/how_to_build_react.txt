@@ -1,0 +1,118 @@
+react build for webpack
+
+1.install nodejs
+
+2.npm install for reactjs
+babel – 아직 ECMAScript6 를 지원하지 않는 환경에서 ECMAScript6 Syntax를 사용 할 수 있게 해줍니다.
+webpack – 모듈 번들러로서, Browserify 처럼 브라우저 위에서 import (require) 을 할 수 있게 해주고 자바스크립트 파일들을 하나로 합쳐줍니다.
+browserify
+webpack-dev-server – wepback에서 지원하는 간단한 개발서버로서 별도의 서버를 구축하지 않고도 웹서버를 열 수 있으며 hot-loader를 통하여 코드가 수정될때마다 자동으로 리로드 되게 할 수 있습니다.
+
+npm i -g babel webpack webpack-dev-server
+
+3. mkdir and npm init
+mkdir folder_name && cd folder_name
+npm init
+
+4 dependency and install plugin (node-module) for webpack
+npm install --save react react-dom
+npm install --save-dev babel-core babel-loader babel-preset-react babel-preset-es2015 webpack webpack-dev-server
+
+5. make workspace 
+folder_name
+├── package.json         
+├── public            # 서버 public path
+│   └── index.html    # 메인 페이지
+├── src               # React.js 프로젝트 루트
+│   ├── components    # 컴포넌트 폴더
+│   │   └── App.js    # App 컴포넌트
+│   └── index.js      # Webpack Entry point
+└── webpack.config.js # Webpack 설정파일
+
+6. config webpack(webpack.config.js )
+module.exports = {
+    entry: './src/index.js',
+ 
+    output: {
+        path: __dirname + '/public/',
+        filename: 'bundle.js'
+    },
+ 
+    devServer: {
+        inline: true,
+        port: 7777,
+        contentBase: __dirname + '/public/'
+    },
+ 
+    module: {
+            loaders: [
+                {
+                    test: /\.js$/,
+                    loader: 'babel',
+                    exclude: /node_modules/,
+                    query: {
+                        cacheDirectory: true,
+                        presets: ['es2015', 'react']
+                    }
+                }
+            ]
+        }
+};
+
+7. modify package.json
+"scripts": {
+    "start": "webpack-dev-server --hot --host 0.0.0.0"
+  },
+
+8. modify public/index.html
+<!DOCTYPE html>
+<html>
+ 
+   <head>
+      <meta charset="UTF-8">
+      <title>React App</title>
+   </head>
+ 
+   <body>
+      <div id="root"></div>
+      <script src="bundle.js"></script>
+   </body>
+ 
+</html>
+
+9. modify src/components/app.js
+import React from 'react';
+ 
+class App extends React.Component {
+    render(){
+ 
+        return (
+                <h1>Hello React Skeleton</h1>
+        );
+    }
+}
+ 
+export default App;
+
+10. modify src/index.js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/App';
+ 
+const rootElement = document.getElementById('root');
+ReactDOM.render(<App />, rootElement);
+
+11. npm start
+
+
+react build for browserify
+
+1,2,3 same step
+
+4 dependency and install plugin (node-module) for browserify
+npm i --save react react-dom babelify babel-preset-react
+browserify -t [ babelify --presets [react] ] src/index.js -o public/bundle.js
+
+
+
+cf) npm install 시 npm 명과 프로젝트 명이 동일하게되면 npm install이 되지 않으므로 주의~~~
